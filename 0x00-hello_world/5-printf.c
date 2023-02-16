@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * Main - intiates a string
  * print - with proper grammar, but the outcome is a piece of art,
