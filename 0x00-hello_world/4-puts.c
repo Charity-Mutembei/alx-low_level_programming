@@ -1,17 +1,13 @@
 #include <stdio.h>
-/**
-* This is the right way to write a print function using puts
-* puts is an alternative of printf in C
-* When using the Betty style, the function is in its independent line 
-* after the curly braces and the return 0 is in brackets too*
-* Main - the entry of the function
-*puts - prints the text
-* returns 0 as needed
-*/
 
+/**
+ *  main - Entry point
+ *  Description: prints "\"Programming is like building a multilingual puzz
+ *  le"
+ *  Return: 0
+ */
 int main(void)
 {
-
 	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
