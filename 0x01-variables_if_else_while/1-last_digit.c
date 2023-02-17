@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
- * main - Entry point
+/**
+ * main - Entry point and Prints the last digit of a randomly generated n
  * return - 0 success
 */
 int main(void)
