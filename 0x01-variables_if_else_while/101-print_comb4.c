@@ -43,6 +43,5 @@ putchar(' ');
 ++first;
 }
 putchar('\n');
-
 return (0);
-}	
+}
