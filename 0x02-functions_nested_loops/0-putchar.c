@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * putchar - Entry point.
+ * main - Entry point.
  * Description: write a program that prints "_putchar" followed by a new lin
  *
- * Return: Always 0 (Success.)
+ * Return: Always 0 Success
  */
 int main (void)
 {
