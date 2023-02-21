@@ -1,16 +1,13 @@
 #include <stdio.h>
+#include "main.h"
 /**
- * main - Prints _putchar
+ * putchar - Entry point.
+ * Description: write a program that prints "_putchar" followed by a new lin
  *
- * Return: Always 0.
+ * Return: Always 0 (Success.)
  */
-int main(void)
+int main (void)
 {
-int i = 0;
-while (i == 0)
-{
-printf("_putchar \n");
-i++;
-}
+printf("_putchar\n");	
 return (0);
 }
