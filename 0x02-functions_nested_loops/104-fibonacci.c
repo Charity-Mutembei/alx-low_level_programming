@@ -7,28 +7,18 @@
 int main(void)
 {
 
-int nr = 0, n = 1, n1 = 2, n3;
+int n = 1, m = 2, i;
 
-while (nr <= 98)
+printf("%d, %d", n, m);
+for (i = 3; i <=98; i++) 
 {
+int tmp = n + m;
 
-n3 = n + n1;
-printf("%d", n3);
-nr++;
+printf(", %d", tmp);
+n = m;
+m = tmp;
+}
 
-n = n1;
-n1 = n3;
-
-if (nr == 98)
-{
 printf("\n");
-}
-else
-{
-printf(", ");
-}
-
-}
-return (0); 
-
+return (0);
 }
