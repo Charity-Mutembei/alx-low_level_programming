@@ -7,13 +7,12 @@
 int main(void)
 {
 
-int nr = 0, n = 1, n1 = 2 , n3;
+int nr = 0, n = 1, n1 = 2, n3;
 
 while (nr <= 98)
 {
 
 n3 = n + n1;
-	
 printf("%d", n3);
 nr++;
 
@@ -30,4 +29,5 @@ printf(", ");
 }
 }
 return (0); 
+
 }
