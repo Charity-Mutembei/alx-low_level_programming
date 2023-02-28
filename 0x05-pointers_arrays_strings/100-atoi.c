@@ -23,12 +23,11 @@ temp++;
 }
 if (*temp != '\0')
 {
-do
-{
+do {
 num = num * 10 + (*temp - '0');
 temp++;
 }
 while (*temp >= '0' && *temp <= '9');
 }
-return (num * sign);
+return (num *sign);
 }
