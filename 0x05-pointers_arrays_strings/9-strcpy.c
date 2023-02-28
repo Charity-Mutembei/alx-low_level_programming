@@ -10,8 +10,7 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-char *dest_start = dest;
-	
+char *dest_start = dest;	
 while (*src != '\0')
 {
 *dest = *src;
@@ -19,6 +18,6 @@ src++;
 dest++;
 }
 *dest = '\0';
-return dest_start;
+return (dest_start);
 }
 
