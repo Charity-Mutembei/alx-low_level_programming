@@ -10,15 +10,24 @@
  */
 int main(void)
 {
-	char password[PASSWORD_LENGTH + 1];
-	srand(time(NULL));
-	int i;
+int i, random, sum;
+char key[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+char password[100];
+srand(time(NULL));
+sum = 0;
+i = 0;
 
-	for (i = 0; i < PASSWORD_LENGTH; i++)
-	{
-		 password[i] = rand() % 26 + 'a';
-	}
-	 password[PASSWORD_LENGTH] = '\0';
-	 printf("%s\n", password);
-	  return (0);
+while (sum < (2772 - 122))
+{
+random = rand() % 62;
+password[i] = key[random];
+sum = sum + password[i];
+i++;
+}
+random = 2772 - sum;
+password[i] = random;
+i++;
+password[i] = '\0';
+printf("%s", password);
+return (0);
 }
