@@ -7,31 +7,25 @@
  */
 int _atoi(char *s)
 {
-int sign = 1;
-int result = 0;
-int seen_digit = 0;
+		int sign;
+			unsigned int num;
+				char *temp;
 
-while (*s)
-{
-if (isdigit(*s))
-{
-seen_digit = 1;
-result = result * 10 + (*s - '0');
+					temp = s;
+						num = 0;
+							sign = 1;
+								while (*temp != '\0' && (*temp < '0' || *temp > '9'))
+										{
+													if (*temp == '-')
+																	sign *= -1;
+															temp++;
+																}
+									if (*temp != '\0')
+											{
+														do {
+																		num = num * 10 + (*temp - '0');
+																					temp++;
+																							} while (*temp >= '0' && *temp <= '9');
+															}
+										return (num * sign);
 }
-else if (*s == '-' && !seen_digit)
-{
-sign = -1;
-}
-else if (*s == '+' && !seen_digit)
-{
-sign = 1;
-}
-else if (seen_digit)
-{
-break;
-}
-s++;
-}
-return sign * result;
-}
-
