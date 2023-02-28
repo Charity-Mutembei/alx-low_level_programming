@@ -12,8 +12,9 @@ int main(void)
 {
 	char password[PASSWORD_LENGTH + 1];
 	srand(time(NULL));
+	int i;
 
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
+	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
 		 password[i] = rand() % 26 + 'a';
 	}
