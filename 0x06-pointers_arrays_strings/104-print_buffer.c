@@ -5,7 +5,7 @@
  *  * isPrintableASCII - determines if n is a printable ASCII char
  *   * @n: integer
  *    * Return: 1 if true, 0 if false
- *     */
+ */
 int isPrintableASCII(int n)
 {
 		return (n >= 32 && n <= 126);
@@ -16,7 +16,7 @@ int isPrintableASCII(int n)
  *   * @b: string to print
  *    * @start: starting position
  *     * @end: ending position
- *      */
+ */
 void printHexes(char *b, int start, int end)
 {
 		int i = 0;
@@ -39,7 +39,7 @@ void printHexes(char *b, int start, int end)
  *    * @b: string to print
  *     * @start: starting position
  *      * @end: ending position
- *       */
+ */
 void printASCII(char *b, int start, int end)
 {
 		int ch, i = 0;
@@ -58,7 +58,7 @@ void printASCII(char *b, int start, int end)
  *  * print_buffer - prints a buffer
  *   * @b: string
  *    * @size: size of buffer
- *     */
+ */
 void print_buffer(char *b, int size)
 {
 		int start, end;
