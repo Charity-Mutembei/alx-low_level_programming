@@ -13,5 +13,9 @@ done
 #create the static library from the objects files above
 ar rc liball.a *.o
 
+#then we can index each object file received 
+ranlib liball.a 
+#the only remaining step is that of using the library in a program 
+
 #clean up the objects files if you want 
 #here is the command - rm *.o
