@@ -21,7 +21,7 @@ return (NULL);
 grid = (int **)malloc(sizeof(int *) * height);
 if (grid == NULL)
 {
-	return NULL;
+	return (NULL);
 }
 /*allocate memory to the grid elements and intiatilize to 0*/
 for (i = 0; i < height; i++)
