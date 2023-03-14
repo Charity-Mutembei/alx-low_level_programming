@@ -8,25 +8,22 @@
  */
 char *_strdup(char *str)
 {
-	char *strdup;
-	int i;
+		char *strout;
+			unsigned int i, j;
 
-	/*first check if str (in the char *str) is empty*/
-	if (str == 0)
-	{
-		return (NULL);
-	}
-	strdup = (char *)malloc(sizeof(char) * 2);
-	/*now copy the str to the dup - strdup*/
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		strdup[i] = str[i];
-	}
-	/* allocate the memory*/
-	/*strdup = malloc(sizeof(char) *2);*/
-	if (strdup == 0)
-	{
-		return (NULL);
-	}
-	return (strdup);
+				if (str == NULL)
+							return (NULL);
+
+					for (i = 0; str[i] != '\0'; i++)
+								;
+
+						strout = (char *)malloc(sizeof(char) * (i + 1));
+
+							if (strout == NULL)
+										return (NULL);
+
+								for (j = 0; j <= i; j++)
+											strout[j] = str[j];
+
+									return (strout);
 }
