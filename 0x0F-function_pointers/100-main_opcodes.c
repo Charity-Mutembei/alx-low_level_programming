@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-#include <stdlib.h>
 /**
  * main - check the code for Holberton School students.
  * @argc: argument count.
@@ -17,7 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: %s [number of bytes >= 0]\n", argv[0]);
+		printf("Error\n");
 		exit(1);
 	}
 
@@ -25,7 +23,7 @@ int main(int argc, char *argv[])
 
 	if (nbytes < 0)
 	{
-		fprintf(stderr, "Error: number of bytes must be >= 0\n");
+		printf("Error\n");
 		exit(2);
 	}
 
