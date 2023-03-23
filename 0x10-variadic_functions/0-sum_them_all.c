@@ -21,5 +21,5 @@ for (i = 0; i < n; i++)
 sum += va_arg(args, int);
 }
 va_end(args);
-return (0);
+return (sum);
 }
