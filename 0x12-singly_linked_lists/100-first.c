@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include "lists.h"
+
+void print_something(void) __attribute__ ((constructor));
+
 /**
- *before_main - prints a msg before the main
- * main - check the code *
- * Return: Always 0.
+ *print_something - prints a msg before the main
  */
-void before_main(void)
+
+void print_something(void)
 {
-printf("You're beat! and yet, you must allow,\n"
-"I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n"
+	       "I bore my house upon my back!\n");
 }
