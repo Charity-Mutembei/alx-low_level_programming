@@ -1,7 +1,8 @@
-this is a readme for thw 0x013-single links project
+## This is a readme for thw 0x013-single links project
 
 
-
+## we will be using the code below as our data structure
+```
 /**
  * struct listint_s - singly linked list
  * @n: integer
@@ -10,11 +11,14 @@ this is a readme for thw 0x013-single links project
  * Description: singly linked list node structure
  * 
  */
+
 typedef struct listint_s
 {
     int n;
     struct listint_s *next;
 } listint_t;
+```
+## explanation of the code above is found below 
 
 This is a struct definition for a singly linked list node in C language. The struct is named listint_s and it contains two members:
 
@@ -26,19 +30,21 @@ This struct definition can be used to create a singly linked list by creating no
 
 
 
+## Task 0
 
+#### Write a function that prints all the elements of a listint_t list.
+<br>
 
-Write a function that prints all the elements of a listint_t list.
+```Prototype: size_t print_listint(const listint_t *h);``` <br>
+```Return: the number of nodes``` <br>
+```You are allowed to use printf``` <br>
+<br>
 
-Prototype: size_t print_listint(const listint_t *h);
-Return: the number of nodes
-Format: see example
-You are allowed to use printf
-
-Here's an implementation of the print_listint function:
+#### Here's an implementation of the print_listint function:
 
 c
 Copy code
+```
 #include "lists.h"
 
 /**
@@ -47,6 +53,7 @@ Copy code
  *
  * Return: The number of nodes in the listint_t list.
  */
+ 
 size_t print_listint(const listint_t *h)
 {
     size_t node_count = 0;
@@ -60,22 +67,24 @@ size_t print_listint(const listint_t *h)
 
     return (node_count);
 }
+```
 The function takes a pointer to the head of a listint_t list as its parameter. It then iterates through the list using a while loop, printing the value of each node's n member using printf. It also increments a node_count variable with each iteration to keep track of the number of nodes.
 
 Finally, the function returns the node_count variable to indicate the number of nodes in the list.
 
 
 
+### Task 1
 
+#### Write a function that returns the number of elements in a linked listint_t list.
 
-Write a function that returns the number of elements in a linked listint_t list.
-
-Prototype: size_t listint_len(const listint_t *h);
+```Prototype: size_t listint_len(const listint_t *h);```
 
 Here's an implementation of the listint_len function:
 
 c
 Copy code
+```
 #include "lists.h"
 
 /**
@@ -96,23 +105,25 @@ size_t listint_len(const listint_t *h)
 
     return (node_count);
 }
+```
 The function takes a pointer to the head of a listint_t list as its parameter. It then iterates through the list using a while loop, incrementing a node_count variable with each iteration to keep track of the number of nodes.
 
 Finally, the function returns the node_count variable to indicate the number of nodes in the list.
 
 
 
+### Task 2
 
+#### Write a function that adds a new node at the beginning of a listint_t list.
 
-Write a function that adds a new node at the beginning of a listint_t list.
-
-Prototype: listint_t *add_nodeint(listint_t **head, const int n);
-Return: the address of the new element, or NULL if it failed
+```Prototype: listint_t *add_nodeint(listint_t **head, const int n);``` <br>
+```Return: the address of the new element, or NULL if it failed```
 
 Here's an implementation of the add_nodeint function:
 
 c
 Copy code
+```
 #include "lists.h"
 
 /**
@@ -138,6 +149,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
     return (new_node);
 }
+```
 The function takes a pointer to a pointer to the head of a listint_t list and an integer value n as its parameters. It first allocates memory for a new node using malloc and assigns the address to a new listint_t pointer new_node.
 
 If malloc fails to allocate memory, the function returns NULL to indicate failure.
@@ -147,18 +159,19 @@ If memory allocation is successful, the function assigns the integer value n to 
 The function then returns the address of the new node.
 
 
+### Task 3
 
 
+#### Write a function that adds a new node at the end of a listint_t list.
 
-Write a function that adds a new node at the end of a listint_t list.
-
-Prototype: listint_t *add_nodeint_end(listint_t **head, const int n);
-Return: the address of the new element, or NULL if it failed
+```Prototype: listint_t *add_nodeint_end(listint_t **head, const int n);``` <br>
+```Return: the address of the new element, or NULL if it failed```
 
 Here's an implementation of the add_nodeint_end function:
 
 c
 Copy code
+```
 #include "lists.h"
 
 /**
@@ -197,6 +210,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 
     return (new_node);
 }
+```
 The function takes a pointer to a pointer to the head of a listint_t list and an integer value n as its parameters. It first allocates memory for a new node using malloc and assigns the address to a new listint_t pointer new_node.
 
 If malloc fails to allocate memory, the function returns NULL to indicate failure.
@@ -210,17 +224,17 @@ If the list is not empty, the function iterates through the list using a while l
 Finally, the function returns the address of the new node.
 
 
+### Task 4
 
 
+#### Write a function that frees a listint_t list.
 
-Write a function that frees a listint_t list.
-
-Prototype: void free_listint(listint_t *head);
-
+```Prototype: void free_listint(listint_t *head);``` <br>
 Here's an implementation of the free_listint function:
 
 c
 Copy code
+```
 #include "lists.h"
 
 /**
@@ -240,26 +254,27 @@ void free_listint(listint_t *head)
         free(current_node);
     }
 }
+```
 The function takes a pointer to the head of a listint_t list as its parameter. It initializes a temporary listint_t pointer current_node to the same address as the head pointer.
 
 The function then enters a loop that continues until the head pointer is NULL. In each iteration of the loop, the function assigns the current value of the head pointer to the next member of the current node using the -> operator. It then frees the memory allocated for the current node using free and assigns the address of the next node to the head pointer.
 
 Finally, the function returns nothing, as the list has been freed.
 
+### Task 5
 
 
 
+#### Write a function that frees a listint_t list.
 
-Write a function that frees a listint_t list.
-
-Prototype: void free_listint2(listint_t **head);
-The function sets the head to NULL
+```Prototype: void free_listint2(listint_t **head);``` <br>
+```The function sets the head to NULL```
 
 Here's an implementation of the free_listint2 function:
 
 c
 Copy code
-
+```
 #include "lists.h"
 
 /**
@@ -285,25 +300,26 @@ free(*head);
 
 head = NULL;
 }
-
+```
 Your implementation of free_listint2 looks correct. It takes a pointer to a pointer to the head of a listint_t list as its parameter, initializes a temporary listint_t pointer tmp to the same address as the head pointer, and then enters a loop that continues until the head pointer is NULL.
 
 In each iteration of the loop, the function assigns the value of the next member of the current node to tmp, frees the memory allocated for the current node using free, and assigns the address of the next node to the head pointer.
 
 After the loop has finished, the function sets the value of the head pointer to NULL, indicating that the list is now empty.
 
+### Task 6
 
 
+#### Write a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
 
-Write a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
-
-Prototype: int pop_listint(listint_t **head);
-if the linked list is empty return 0
+```Prototype: int pop_listint(listint_t **head);``` <br>
+```if the linked list is empty return 0```
 
 Here's an implementation of the pop_listint function:
 
 c
 Copy code
+```
 #include "lists.h"
 
 /**
@@ -328,7 +344,7 @@ int pop_listint(listint_t **head)
 
     return (n);
 }
-
+```
 The function takes a pointer to a pointer to the head of a listint_t list as its parameter. It initializes an integer variable n to store the value of the head node, and a temporary listint_t pointer temp to the same address as the head pointer.
 
 The function then checks if the head pointer is NULL or if the value of the head pointer is NULL. If either of these conditions is true, the function returns 0 to indicate that the list is empty.
@@ -337,18 +353,19 @@ If the list is not empty, the function assigns the value of the n member of the 
 
 Finally, the function returns the value of n, which is the integer value stored in the original head node that was deleted.
 
+### Task 7
 
+#### Write a function that returns the nth node of a listint_t linked list.
 
-Write a function that returns the nth node of a listint_t linked list.
-
-Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
-where index is the index of the node, starting at 0
-if the node does not exist, return NULL
+```Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);``` <br>
+```where index is the index of the node, starting at 0``` <br>
+```if the node does not exist, return NULL```
 
 Here's an implementation of the get_nodeint_at_index function:
 
 c
 Copy code
+```
 #include "lists.h"
 
 /**
@@ -378,7 +395,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
     return (NULL);
 }
-
+```
 The function takes a pointer to the head of a listint_t list and an unsigned integer index as its parameters. It initializes a temporary listint_t pointer temp to the same address as the head pointer.
 
 The function then uses a for loop to iterate through the linked list, starting with the head node, until it reaches the node at the specified index or the end of the list. For each iteration of the loop, the function updates temp to point to the next node in the list and increments the index counter i.
@@ -389,18 +406,19 @@ If the function does not find a node at the specified index, it returns NULL usi
 
 
 
+### Task 8
 
 
+#### Write a function that returns the sum of all the data (n) of a listint_t linked list.
 
-Write a function that returns the sum of all the data (n) of a listint_t linked list.
-
-Prototype: int sum_listint(listint_t *head);
-if the list is empty, return 0
+```Prototype: int sum_listint(listint_t *head);``` <br>
+```if the list is empty, return 0```
 
 Here's an implementation of the sum_listint function:
 
 c
 Copy code
+```
 #include "lists.h"
 
 /**
@@ -424,27 +442,30 @@ int sum_listint(listint_t *head)
 
     return (sum);
 }
-
+```
 The function takes a pointer to the head of a listint_t list as its parameter. It initializes an integer variable sum to 0 to hold the sum of all the data (n) in the list and a temporary listint_t pointer temp to the same address as the head pointer.
 
 The function then uses a while loop to iterate through the linked list, starting with the head node, until it reaches the end of the list. For each iteration of the loop, the function adds the value of the n member of the current node to the sum variable and updates temp to point to the next node in the list.
 
 After the loop has finished iterating through the entire list, the function returns the sum of all the data (n) in the list using return (sum). If the list is empty, the function returns 0.
 
+### Task 9
 
+#### Write a function that inserts a new node at a given position.
 
-Write a function that inserts a new node at a given position.
+```Prototype: listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);``` <br>
 
-Prototype: listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
-where idx is the index of the list where the new node should be added. Index starts at 0
-Returns: the address of the new node, or NULL if it failed
-if it is not possible to add the new node at index idx, do not add the new node and return NULL
+```where idx is the index of the list where the new node should be added. Index starts at 0``` <br>
+
+```Returns: the address of the new node, or NULL if it failed``` <br>
+
+```if it is not possible to add the new node at index idx, do not add the new node and return NULL``` <br>
 
 Here's an implementation of the insert_nodeint_at_index function:
 
 c
 Copy code
-
+```
 #include "lists.h"
 
 /**
@@ -490,7 +511,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
     return (new_node);
 }
-
+```
 The function takes a pointer to a pointer to the head of a listint_t list, an unsigned integer idx specifying the position where the new node should be inserted (starting at 0), and an integer n which represents the data to be stored in the new node.
 
 The function first checks if the head pointer is NULL. If it is, the function returns NULL, since there can be no linked list with a NULL head pointer.
@@ -505,15 +526,17 @@ If the specified index is within the bounds of the linked list, the function cre
 
 Finally, the function returns a pointer to the new node.
 
+### Task 10
 
 
+#### Write a function that deletes the node at index index of a listint_t linked list.
 
-Write a function that deletes the node at index index of a listint_t linked list.
+```Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);``` 
 
-Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);
-where index is the index of the node that should be deleted. Index starts at 0
-Returns: 1 if it succeeded, -1 if it failed
+```where index is the index of the node that should be deleted. Index starts at 0```
 
+```Returns: 1 if it succeeded, -1 if it failed```
+```
 #include "lists.h"
 
 /**
@@ -554,32 +577,34 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	free(tmp);
 	return (1);
 }
-
+```
 ## explanation of the above code 
+```
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *tmp, *copy = *head;
 	unsigned int node;
-The function takes in a double pointer to the head of a linked list (**head) and an unsigned int representing the index of the node to delete. It creates two pointers to a listint_t struct called tmp and copy. copy is initially set to point to the same location as *head.
 
-c
-Copy code
+```
+The function takes in a double pointer to the head of a linked list (**head) and an unsigned int representing the index of the node to delete. It creates two pointers to a listint_t struct called tmp and copy. copy is initially set to point to the same location as *head.
+```
 	if (copy == NULL)
 		return (-1);
+
+```
 If the linked list is empty, we return -1 to indicate an error.
 
-c
-Copy code
+```
 	if (index == 0)
 	{
 		*head = (*head)->next;
 		free(copy);
 		return (1);
 	}
+```
 If the index parameter is 0, it means we want to delete the first node of the linked list. We update the head pointer to point to the second node of the linked list, and free the memory allocated for the first node. We then return 1 to indicate success.
 
-c
-Copy code
+```
 	for (node = 0; node < (index - 1); node++)
 	{
 		if (copy->next == NULL)
@@ -587,16 +612,20 @@ Copy code
 
 		copy = copy->next;
 	}
+```
 If index is not 0, we iterate through the linked list using a for loop, checking whether copy->next is NULL (indicating the end of the linked list) or until we have reached the node before the one we want to delete.
 
-c
-Copy code
+```
 	tmp = copy->next;
 	copy->next = tmp->next;
 	free(tmp);
 	return (1);
 }
-
+```
 Once we have reached the node before the one we want to delete, we set tmp to point to the node we want to delete, copy->next to point to the node after the one we want to delete, and free the memory allocated for the node we want to delete. We then return 1 to indicate success.
 
-If we have not found the node we want to delete by the end of the loop (i.e. if index is greater than the number of nodes in the linked list), we return -1 to indicate an error.
+If we have not found the node we want to delete by the end of the loop (i.e. if index is greater than the number of nodes in the linked list), we
+```
+ return (-1); 
+```
+ to indicate an error.
