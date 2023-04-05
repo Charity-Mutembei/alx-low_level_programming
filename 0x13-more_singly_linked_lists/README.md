@@ -430,3 +430,77 @@ The function takes a pointer to the head of a listint_t list as its parameter. I
 The function then uses a while loop to iterate through the linked list, starting with the head node, until it reaches the end of the list. For each iteration of the loop, the function adds the value of the n member of the current node to the sum variable and updates temp to point to the next node in the list.
 
 After the loop has finished iterating through the entire list, the function returns the sum of all the data (n) in the list using return (sum). If the list is empty, the function returns 0.
+
+
+
+Write a function that inserts a new node at a given position.
+
+Prototype: listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
+where idx is the index of the list where the new node should be added. Index starts at 0
+Returns: the address of the new node, or NULL if it failed
+if it is not possible to add the new node at index idx, do not add the new node and return NULL
+
+Here's an implementation of the insert_nodeint_at_index function:
+
+c
+Copy code
+
+#include "lists.h"
+
+/**
+ * insert_nodeint_at_index - Inserts a new node at a given position in a listint_t list.
+ * @head: A pointer to the head of the listint_t list.
+ * @idx: The index of the list where the new node should be added. Index starts at 0.
+ * @n: The integer data for the new node.
+ *
+ * Return: If successful, returns a pointer to the new node. Otherwise, returns NULL.
+ */
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
+{
+    unsigned int i;
+    listint_t *temp, *new_node;
+
+    if (head == NULL)
+        return (NULL);
+
+    new_node = malloc(sizeof(listint_t));
+    if (new_node == NULL)
+        return (NULL);
+
+    new_node->n = n;
+    if (idx == 0)
+    {
+        new_node->next = *head;
+        *head = new_node;
+        return (new_node);
+    }
+
+    temp = *head;
+    for (i = 0; i < idx - 1 && temp != NULL; i++)
+        temp = temp->next;
+
+    if (temp == NULL)
+    {
+        free(new_node);
+        return (NULL);
+    }
+
+    new_node->next = temp->next;
+    temp->next = new_node;
+
+    return (new_node);
+}
+
+The function takes a pointer to a pointer to the head of a listint_t list, an unsigned integer idx specifying the position where the new node should be inserted (starting at 0), and an integer n which represents the data to be stored in the new node.
+
+The function first checks if the head pointer is NULL. If it is, the function returns NULL, since there can be no linked list with a NULL head pointer.
+
+The function then allocates memory for a new node using malloc and assigns the integer n to the n member of the new node. If malloc fails to allocate memory for the new node, the function returns NULL.
+
+If idx is 0, the new node is added at the beginning of the list, and the function updates the head pointer to point to the new node.
+
+If idx is greater than 0, the function uses a loop to traverse the linked list to the node at index idx-1 (since the new node will be inserted between the nodes at idx-1 and idx). If the end of the list is reached before the specified index, the function returns NULL and frees the allocated memory for the new node.
+
+If the specified index is within the bounds of the linked list, the function creates a new node with the data n, assigns its next member to point to the next node in the list, and sets the next member of the previous node to point to the new node.
+
+Finally, the function returns a pointer to the new node.
