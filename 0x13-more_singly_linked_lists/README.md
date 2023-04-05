@@ -291,3 +291,45 @@ Your implementation of free_listint2 looks correct. It takes a pointer to a poin
 In each iteration of the loop, the function assigns the value of the next member of the current node to tmp, frees the memory allocated for the current node using free, and assigns the address of the next node to the head pointer.
 
 After the loop has finished, the function sets the value of the head pointer to NULL, indicating that the list is now empty.
+
+Write a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
+
+Prototype: int pop_listint(listint_t **head);
+if the linked list is empty return 0
+
+Here's an implementation of the pop_listint function:
+
+c
+Copy code
+#include "lists.h"
+
+/**
+ * pop_listint - Deletes the head node of a listint_t linked list.
+ * @head: A pointer to a pointer to the head of the listint_t list.
+ *
+ * Return: The integer value stored in the head node.
+ *         If the linked list is empty, returns 0.
+ */
+int pop_listint(listint_t **head)
+{
+    int n;
+    listint_t *temp;
+
+    if (head == NULL || *head == NULL)
+        return (0);
+
+    n = (*head)->n;
+    temp = *head;
+    *head = (*head)->next;
+    free(temp);
+
+    return (n);
+}
+
+The function takes a pointer to a pointer to the head of a listint_t list as its parameter. It initializes an integer variable n to store the value of the head node, and a temporary listint_t pointer temp to the same address as the head pointer.
+
+The function then checks if the head pointer is NULL or if the value of the head pointer is NULL. If either of these conditions is true, the function returns 0 to indicate that the list is empty.
+
+If the list is not empty, the function assigns the value of the n member of the head node to n, assigns the address of the head node to temp, assigns the address of the next node to the head pointer, and frees the memory allocated for the original head node using free.
+
+Finally, the function returns the value of n, which is the integer value stored in the original head node that was deleted.
