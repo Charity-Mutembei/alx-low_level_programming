@@ -386,3 +386,47 @@ The function then uses a for loop to iterate through the linked list, starting w
 If the index counter i equals the specified index and the temp pointer is not NULL, the function returns the address of the node at the specified index using return (temp).
 
 If the function does not find a node at the specified index, it returns NULL using return (NULL).
+
+
+
+
+
+
+Write a function that returns the sum of all the data (n) of a listint_t linked list.
+
+Prototype: int sum_listint(listint_t *head);
+if the list is empty, return 0
+
+Here's an implementation of the sum_listint function:
+
+c
+Copy code
+#include "lists.h"
+
+/**
+ * sum_listint - Returns the sum of all the data (n) of a listint_t linked list.
+ * @head: A pointer to the head of the listint_t list.
+ *
+ * Return: If successful, returns the sum of all the data (n) in the list. Otherwise, returns 0.
+ */
+int sum_listint(listint_t *head)
+{
+    int sum = 0;
+    listint_t *temp;
+
+    temp = head;
+
+    while (temp != NULL)
+    {
+        sum += temp->n;
+        temp = temp->next;
+    }
+
+    return (sum);
+}
+
+The function takes a pointer to the head of a listint_t list as its parameter. It initializes an integer variable sum to 0 to hold the sum of all the data (n) in the list and a temporary listint_t pointer temp to the same address as the head pointer.
+
+The function then uses a while loop to iterate through the linked list, starting with the head node, until it reaches the end of the list. For each iteration of the loop, the function adds the value of the n member of the current node to the sum variable and updates temp to point to the next node in the list.
+
+After the loop has finished iterating through the entire list, the function returns the sum of all the data (n) in the list using return (sum). If the list is empty, the function returns 0.
