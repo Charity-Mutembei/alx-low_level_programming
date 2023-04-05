@@ -629,3 +629,51 @@ If we have not found the node we want to delete by the end of the loop (i.e. if 
  return (-1); 
 ```
  to indicate an error.
+
+
+### Task 11 
+
+#### Write a function that reverses a listint_t linked list.
+
+```Prototype: listint_t *reverse_listint(listint_t **head);``` <br>
+
+```Returns: a pointer to the first node of the reversed list``` <br>
+
+```You are not allowed to use more than 1 loop.```
+
+```You are not allowed to use malloc, free or arrays```
+
+```You can only declare a maximum of two variables in your function```
+
+#### find code implementation below
+
+```
+#include "lists.h"
+
+/**
+ * reverse_listint - Reverses a listint_t linked list.
+ * @head: A pointer to the address of the head of the listint_t list.
+ *
+ * Return: A pointer to the first node of the reversed list.
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+listint_t *prev = NULL;
+listint_t *current = *head;
+
+while (current != NULL)
+{
+listint_t *next = current->next;
+current->next = prev;
+prev = current;
+current = next;
+}
+
+*head = prev;
+
+return (*head);
+}
+```
+We start by declaring two pointers prev and current, both initially set to NULL and the head of the list respectively. Then we use a while loop to iterate through the linked list as long as current is not NULL. Inside the loop, we declare a temporary pointer next to store the next node of current. We then modify current->next to point to the previous node prev. Then we update prev to current and current to next. We repeat this until current reaches the end of the list.
+
+Once we reach the end of the list, we update the head of the list to point to the last node (which is now the first node), since prev will now be pointing to the last node. Finally, we return the head of the list.
