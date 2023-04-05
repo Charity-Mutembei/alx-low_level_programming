@@ -292,6 +292,9 @@ In each iteration of the loop, the function assigns the value of the next member
 
 After the loop has finished, the function sets the value of the head pointer to NULL, indicating that the list is now empty.
 
+
+
+
 Write a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
 
 Prototype: int pop_listint(listint_t **head);
@@ -333,3 +336,53 @@ The function then checks if the head pointer is NULL or if the value of the head
 If the list is not empty, the function assigns the value of the n member of the head node to n, assigns the address of the head node to temp, assigns the address of the next node to the head pointer, and frees the memory allocated for the original head node using free.
 
 Finally, the function returns the value of n, which is the integer value stored in the original head node that was deleted.
+
+
+
+Write a function that returns the nth node of a listint_t linked list.
+
+Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
+where index is the index of the node, starting at 0
+if the node does not exist, return NULL
+
+Here's an implementation of the get_nodeint_at_index function:
+
+c
+Copy code
+#include "lists.h"
+
+/**
+ * get_nodeint_at_index - Returns the nth node of a listint_t linked list.
+ * @head: A pointer to the head of the listint_t list.
+ * @index: The index of the node, starting at 0.
+ *
+ * Return: If successful, returns the address of the node at the specified
+ *         index in the list. Otherwise, returns NULL.
+ */
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+    unsigned int i;
+    listint_t *temp;
+
+    temp = head;
+
+    for (i = 0; temp != NULL && i < index; i++)
+    {
+        temp = temp->next;
+    }
+
+    if (i == index && temp != NULL)
+    {
+        return (temp);
+    }
+
+    return (NULL);
+}
+
+The function takes a pointer to the head of a listint_t list and an unsigned integer index as its parameters. It initializes a temporary listint_t pointer temp to the same address as the head pointer.
+
+The function then uses a for loop to iterate through the linked list, starting with the head node, until it reaches the node at the specified index or the end of the list. For each iteration of the loop, the function updates temp to point to the next node in the list and increments the index counter i.
+
+If the index counter i equals the specified index and the temp pointer is not NULL, the function returns the address of the node at the specified index using return (temp).
+
+If the function does not find a node at the specified index, it returns NULL using return (NULL).
