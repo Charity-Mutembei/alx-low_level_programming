@@ -504,3 +504,99 @@ If idx is greater than 0, the function uses a loop to traverse the linked list t
 If the specified index is within the bounds of the linked list, the function creates a new node with the data n, assigns its next member to point to the next node in the list, and sets the next member of the previous node to point to the new node.
 
 Finally, the function returns a pointer to the new node.
+
+
+
+
+Write a function that deletes the node at index index of a listint_t linked list.
+
+Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);
+where index is the index of the node that should be deleted. Index starts at 0
+Returns: 1 if it succeeded, -1 if it failed
+
+#include "lists.h"
+
+/**
+ * delete_nodeint_at_index - Deletes the node at a given
+ *                           index of a listint_t list.
+ * @head: A pointer to the address of the
+ *        head of the listint_t list.
+ * @index: The index of the node to be deleted - indices start at 0.
+ *
+ * Return: On success - 1.
+ *         On failure - -1.
+ */
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
+{
+	listint_t *tmp, *copy = *head;
+	unsigned int node;
+
+	if (copy == NULL)
+		return (-1);
+
+	if (index == 0)
+	{
+		*head = (*head)->next;
+		free(copy);
+		return (1);
+	}
+
+	for (node = 0; node < (index - 1); node++)
+	{
+		if (copy->next == NULL)
+			return (-1);
+
+		copy = copy->next;
+	}
+
+	tmp = copy->next;
+	copy->next = tmp->next;
+	free(tmp);
+	return (1);
+}
+
+## explanation of the above code 
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
+{
+	listint_t *tmp, *copy = *head;
+	unsigned int node;
+The function takes in a double pointer to the head of a linked list (**head) and an unsigned int representing the index of the node to delete. It creates two pointers to a listint_t struct called tmp and copy. copy is initially set to point to the same location as *head.
+
+c
+Copy code
+	if (copy == NULL)
+		return (-1);
+If the linked list is empty, we return -1 to indicate an error.
+
+c
+Copy code
+	if (index == 0)
+	{
+		*head = (*head)->next;
+		free(copy);
+		return (1);
+	}
+If the index parameter is 0, it means we want to delete the first node of the linked list. We update the head pointer to point to the second node of the linked list, and free the memory allocated for the first node. We then return 1 to indicate success.
+
+c
+Copy code
+	for (node = 0; node < (index - 1); node++)
+	{
+		if (copy->next == NULL)
+			return (-1);
+
+		copy = copy->next;
+	}
+If index is not 0, we iterate through the linked list using a for loop, checking whether copy->next is NULL (indicating the end of the linked list) or until we have reached the node before the one we want to delete.
+
+c
+Copy code
+	tmp = copy->next;
+	copy->next = tmp->next;
+	free(tmp);
+	return (1);
+}
+
+Once we have reached the node before the one we want to delete, we set tmp to point to the node we want to delete, copy->next to point to the node after the one we want to delete, and free the memory allocated for the node we want to delete. We then return 1 to indicate success.
+
+If we have not found the node we want to delete by the end of the loop (i.e. if index is greater than the number of nodes in the linked list), we return -1 to indicate an error.
