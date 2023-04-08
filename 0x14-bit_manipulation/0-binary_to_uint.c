@@ -9,27 +9,21 @@
 unsigned int binary_to_uint(const char *b)
 {
 unsigned int result = 0;
-int len = strlen(b);
-int i;
+int i = 0;
 
-/*Check for invalid input*/
-for (i = 0; i < len; i++)
+if (b == NULL)
+return (0);
+while (b[i])
 {
-if (b[i] != '0' && b[i] != '1')
+if (b[i] == '0' || b[i] == '1')
+{
+result = (result << 1) + (b[i] - '0');
+}
+else
 {
 return (0);
-/*Return 0 if there is an invalid character*/
 }
+i++;
 }
-
-/*Convert binary to unsigned int*/
-for (i = 0; i < len; i++)
-{
-if (b[len - i - 1] == '1')
-{
-result += (unsigned int) pow(2, i);
-}
-}
-
 return (result);
 }
