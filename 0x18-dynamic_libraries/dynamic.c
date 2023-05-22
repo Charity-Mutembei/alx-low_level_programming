@@ -10,7 +10,7 @@
  */
 int _putchar(char c)
 {
-
+    return (0);
 }
 /**
  * _islower - checks if a character is lowercase
@@ -20,7 +20,7 @@ int _putchar(char c)
  */
 int _islower(int c)
 {
-
+    return (0);
 }
 /**
  * _isalpha - checks if a character is an alphabetic character
@@ -30,7 +30,7 @@ int _islower(int c)
  */
 int _isalpha(int c)
 {
-
+    return (0);
 }
 /**
  * _abs - computes the absolute value of an integer
@@ -40,7 +40,7 @@ int _isalpha(int c)
  */
 int _abs(int n)
 {
-
+    return (0);
 }
 /**
  * _isupper - checks if a character is uppercase
@@ -50,7 +50,7 @@ int _abs(int n)
  */
 int _isupper(int c)
 {
-
+    return (0);
 }
 /**
  * _isdigit - checks if a character is a digit
@@ -60,7 +60,7 @@ int _isupper(int c)
  */
 int _isdigit(int c)
 {
-
+    return (0);
 }
 /**
  * _strlen - computes the length of a string
@@ -70,7 +70,7 @@ int _isdigit(int c)
  */
 int _strlen(char *s)
 {
-
+    return (0);
 }
 /**
  * _puts - writes a string to the standard output
@@ -91,7 +91,7 @@ void _puts(char *s)
  */
 char *_strcpy(char *dest, char *src)
 {
-
+    return (0);
 }
 /**
  * _atoi - converts a string to an integer
@@ -101,7 +101,7 @@ char *_strcpy(char *dest, char *src)
  */
 int _atoi(char *s)
 {
-
+    return (0);
 }
 /**
  * _strcat - concatenates two strings
@@ -112,7 +112,7 @@ int _atoi(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-
+    return (0);
 }
 /**
  * _strncat - concatenates two strings up to n characters
@@ -124,7 +124,7 @@ char *_strcat(char *dest, char *src)
  */
 char *_strncat(char *dest, char *src, int n)
 {
-
+    return (0);
 }
 /**
  * _strncpy - copies a string from source to destination up to n characters
@@ -136,7 +136,7 @@ char *_strncat(char *dest, char *src, int n)
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-
+    return (0);
 }
 /**
  * _strcmp - compares two strings lexicographically
@@ -149,7 +149,7 @@ char *_strncpy(char *dest, char *src, int n)
  */
 int _strcmp(char *s1, char *s2)
 {
-
+    return (0);
 }
 /**
  * _memset - fills a block of memory with a specific value
@@ -161,7 +161,7 @@ int _strcmp(char *s1, char *s2)
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-
+    return (0);
 }
 /**
  * _memcpy - copies a block of memory from source to destination
@@ -173,7 +173,7 @@ char *_memset(char *s, char b, unsigned int n)
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-
+    return (0);
 }
 /**
  * _strchr - locates the first occurrence of a character in a string
@@ -185,7 +185,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
  */
 char *_strchr(char *s, char c)
 {
-
+    return (0);
 }
 /**
  * _strspn - gets the length of a prefix substring
@@ -196,7 +196,7 @@ char *_strchr(char *s, char c)
  */
 unsigned int _strspn(char *s, char *accept)
 {
-
+    return (0);
 }
 /**
  * _strpbrk - searches a string for any set of bytes
@@ -208,7 +208,7 @@ unsigned int _strspn(char *s, char *accept)
  */
 char *_strpbrk(char *s, char *accept)
 {
-
+    return (0);
 }
 /**
  * _strstr - locates the first occurrence of a substring in a string
@@ -220,5 +220,5 @@ char *_strpbrk(char *s, char *accept)
  */
 char *_strstr(char *haystack, char *needle)
 {
-
+    return (0);
 }
