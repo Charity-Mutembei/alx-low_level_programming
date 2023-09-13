@@ -10,8 +10,10 @@
  * @size: prototype
  * @value: prototype
  * linear_search - entry point for prototype
+ * binary_search - entry point for proptoype 2
  * Return: -1 for fail
  */
 int linear_search(int *array, size_t size, int value);
+int binary_search(int *array, size_t size, int value);
 
 #endif
