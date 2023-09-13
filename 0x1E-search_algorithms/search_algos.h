@@ -32,6 +32,7 @@ typedef struct skiplist_s
  * jump_search - entry point for prototype 3
  * interpolation_search - entry point for prototype 4
  * exponential_search - entry point for prototype 4
+ * advanced_binary - entry point for prototype 5
  * Return: -1 for fail
  */
 int linear_search(int *array, size_t size, int value);
@@ -40,5 +41,6 @@ int jump_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
 skiplist_t *linear_skip(skiplist_t *list, int value);
 int exponential_search(int *array, size_t size, int value);
+int advanced_binary(int *array, size_t size, int value);
 
 #endif
