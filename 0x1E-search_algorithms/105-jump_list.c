@@ -13,16 +13,17 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-if (list == NULL || size == 0)
-return (NULL);
-
 size_t jump_step = sqrt(size);
 listint_t *current = list, *prev = NULL;
+size_t i;
+
+if (list == NULL || size == 0)
+return (NULL);
 
 while (current->next != NULL && current->n < value)
 {
 prev = current;
-for (size_t i = 0; i < jump_step && current->next != NULL; i++)
+for (i = 0; i < jump_step && current->next != NULL; i++)
 {
 current = current->next;
 }
